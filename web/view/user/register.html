@@ -1,0 +1,75 @@
+<div>
+	<ul>
+	{{#messages}}
+  		<li>{{message}}</li>
+	{{/messages}}
+	</ul>
+	<form id="register_form" action="" method="POST">
+		<div>
+			<label for="name">Your username</label><br />
+			<input type="text" name="name" placeholder="Your username" />
+		</div>
+		<div>
+			<label for="password">Your password</label><br />
+			<input type="password" name="password"  placeholder="Your password" /><br />
+			<label for="passwordconfirm">Confirm password</label><br />
+			<input type="password" name="passwordconfirm"  placeholder="Confirm password" />
+		</div>
+		<br />
+		<div>
+		Select a character : 
+		<select id="character" name="character">
+			<option value="female">Female Farmer</option>
+			<option value="farmerblue">Blue Farmer</option>
+			<option value="farmerdarkblue">DarkBlue Farmer</option>
+			<option value="farmergreen">GreenFarmer</option>
+			<option value="farmerorange">Orange Farmer</option>
+			<option value="farmerpink">Pink Farmer</option>
+			<option value="farmerred">Red Farmer</option>
+			<option value="farmerwhite">White Farmer</option>
+			<option value="farmeryellow">Yellow Farmer</option>
+			<option value="sheep">Sheep</option>
+			<option value="dog">Dog</option>
+			<option value="claudiagreen">Lady Claudia Green</option>
+			<option value="claudiapink">Lady Claudia Pink</option>
+		</select>
+		<div id="character_preview"></div>
+		</div>
+		<br />
+		<div>
+		Select a difficulty : 
+		<select id="difficulty" name="difficulty">
+			<option value="easy">Easy</option>
+			<option value="normal">Normal</option>
+			<option value="difficult">Difficult</option>
+		</select>
+		</div>
+		<br />
+		<input type="submit" value="Let's play!"/>
+	</form>
+	
+	<p id="time_warning" style="display:none;">
+	<br />
+	The world take some time to adapt to you, please wait.
+	</p>
+</div>
+<script type="text/javascript">
+$("#register_form").submit(function () {
+    $("#time_warning").show("fade");
+});
+
+$("#character").on('change', function () {
+    previewCharacter();
+});
+function previewCharacter () {
+    $("#character_preview").css("background", "url(\"/img/people/" + $("#character").val() + ".png\")")
+}
+previewCharacter();
+</script>
+<style>
+#character_preview {
+	width: 50px;
+	height: 70px;
+	background-color: #FFF;
+}
+</style>

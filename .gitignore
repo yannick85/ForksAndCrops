@@ -1,0 +1,4 @@
+.project
+.settings/*
+#UNCOMMENT THIS LINE AFTER FIRST COMMIT
+#dao/config.js

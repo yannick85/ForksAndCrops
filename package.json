@@ -1,0 +1,15 @@
+{
+  "name" : "farmwars",
+  "version" : "0.1.0",
+  "main" : "server.js",
+  "scripts" : {
+    "start" : "node server.js"
+  },
+  "dependencies": {
+	  "connect": "2.7.3",
+	  "mustache": "0.7.2",
+  	  "pg": "0.7.2",
+  	  "sha1": "1.0.1",
+  	  "socket.io": "0.9.14"
+  }
+}

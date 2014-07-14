@@ -1,0 +1,77 @@
+body{
+    background-color: #E6E2AF;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    text-decoration: underline;
+    color: purple;
+}
+
+#content_wrapper {
+	clear: both;
+	min-height: 550px;
+}
+#content {
+    margin-top: 25px;
+    width: 1000px;
+    margin: 0 auto;
+}
+#content_inside {
+	
+}
+
+#user_bar {
+    height: 60px;
+    width: 400px;
+    padding-top: 20px;
+    text-align: center;
+    float: right;
+}
+#user_bar a {
+    margin-left: 40px;
+}
+
+/* Header */
+#header {
+    
+}
+#header_inside {
+	width: 1000px;
+	margin: 0 auto;   
+}
+#logo {
+    height: 80px;
+    width: 500px;
+    float: left;
+    vertical-align: top;
+    text-align: center;
+    font-size: 3.3em;
+    font-weight: bolder;
+}
+
+#banner a {
+	background: url("../img/banner.png");
+    height: 180px;
+    width: 448px;
+    float: left;
+}
+
+/* Footer */
+#footer {
+	margin-top: 25px;
+    text-align: center;
+    clear: both;
+    margin-bottom: 15px;
+}
+
+
+#twitter_wrapper {
+	float: right;
+	width: 400px;
+	height: 400px;
+	margin-right: 100px;
+	margin-top: -50px;
+}

@@ -1,0 +1,242 @@
+<link rel="stylesheet" media="screen" type="text/css" title="style" href="/styles/game.css"></link>
+<script src="/scripts/lib/fabric.min.js"></script>
+<script src="/scripts/lib/socket.io.min.js"></script>
+
+<script src="/scripts/base/square.js"></script>
+<script src="/scripts/base/player.js"></script>
+<script src="/scripts/base/fog.js"></script>
+
+
+<script src="/scripts/define.js"></script>
+<script src="/scripts/util.js"></script>
+<script src="/scripts/socket.js"></script>
+<script src="/scripts/control.js"></script>
+<script src="/scripts/chat.js"></script>
+<script src="/scripts/song.js"></script>
+<script src="/scripts/loading.js"></script>
+
+<div id="game_zone" style="fleft">
+	<div id="top_zone">
+		<div id="user_info">
+			<div id="user_name" title="Your pseudo"></div>
+			<div id="user_level" title="Your level"></div>
+			<div id="user_experience_to_up" title="Experience needed to level up"></div>
+			<div id="user_territory_size" title="Your number of tile"></div>
+			<div id="user_health" title="Your health"></div>
+			<div id="user_money" title="Your gold"></div>
+			<div id="user_position" title="Your position">
+				<div>X :<span id="user_position_x"></span></div>
+			    <div>Y :<span id="user_position_y"></span></div>
+			</div>
+			<div id="sound_control" class="active">Sound</div>
+			<div id="help_button" class="active">Help</div>
+		</div>
+	</div>
+	<div id="info_zone">
+		<div class="panel" id="crop_market_wrapper">
+			<div class="panel-title">Crop market</div>
+			<div class="panel-inside">
+				<div class="panel-refresh"></div>
+				<div class="panel-content" id="crop_market"></div>
+			</div>
+		</div>
+		<div class="panel" id="natural_event_wrapper">
+			<div class="panel-title">Natural events</div>
+			<div class="panel-inside">
+				<div class="panel-refresh"></div>
+				<div class="panel-content" id="natural_event"></div>
+			</div>
+		</div>
+		<div class="panel" id="weapons_wrapper">
+			<div class="panel-title">Weapons</div>
+			<div class="panel-inside">
+				<div class="panel-refresh"></div>
+				<div class="panel-content" id="weapons"></div>
+			</div>
+		</div>
+		<div class="panel" id="players_wrapper">
+			<div class="panel-title">Players</div>
+			<div class="panel-inside">
+				<div class="panel-refresh"></div>
+				<div class="panel-content" id="players"></div>
+			</div>
+		</div>
+		<div id="square_info">
+			<div id="square_info_base">
+			    <span style="display:none">
+			    	X :<span id="square_x"></span>
+			    	Y :<span id="square_y"></span>
+			    </span>
+			    <div id="square_humidity_wrapper" title="Tile humidity">
+			    	<span id="square_humidity"></span> %
+		    	</div>
+			    <div id="square_fertility_wrapper" title="Tile fertility">
+			    	<span id="square_fertility"></span> %
+			    </div>
+			    <div id="square_owner_wrapper" title="Tile owner">
+			    	<span id="square_owner"></span>
+			    </div>
+			</div>
+		    <div id="square_crop">
+		    	<div id="square_crop_name_wrapper">
+		    		<span id="square_crop_name"></span>
+		    	</div>
+		    	<div id="square_crop_health_wrapper" title="Crop health">
+		    		<span id="square_crop_health"></span> %
+		    	</div>
+		    	<div id="square_crop_maturity_wrapper" title="Crop maturity">
+		    		<span id="square_crop_maturity"></span> %
+		    	</div>
+		    </div>
+	    	<div style="display:none;" id="set_crop" class="button" data-ks="s">Set a crop</div>
+	    	<div id="crop_list" style="display:none;">
+	    		{{#cropList}}
+	    		<a href="#" data-crop-id="{{crop_id}}" data-ks="{{crop_id}}">{{name}} ({{price}} gold)</a>
+				{{/cropList}}
+	    	</div>
+	    	<div style="display:none;" id="sell_crop" class="button" data-ks="s">Sell this crop</div>
+	    	<div style="display:none;" id="stock_crop" class="button" data-ks="b" >Stock this crop</div>
+	    	<div style="display:none;" id="remove_crop" class="button" data-ks="r">Remove this crop</div>
+	    	<div style="display:none;" id="fertilize_crop" class="button" data-ks="f">Fertilize (4gold => 30%)</div>
+	    	<div style="display:none;" id="water_crop" class="button" data-ks="w">Water (4gold => 30%)</div>
+	    	<div style="display:none;" id="buy_square" style="display:none;" class="button"  data-ks="b">Buy this tile (<span id="buy_square_price"></span>)</div>
+	    	<div style="display:none;" id="attack_square" style="display:none;" class="button" data-ks="a">Attack this tile (<span id="attack_square_price"></span>)</div>
+		</div>
+	</div>
+	<div id="canvas_wrapper">
+		<div id="message_info_box" style="display:none;">
+		</div>
+		<div id="popup_wrapper"></div>
+		<div id="chat_wrapper">
+			<div id="chat_inside" style="display:none">
+				<div id="chat_top">
+					<div id="chat_check_public" ><input checked="checked" type="checkbox">public</div>
+					<div id="chat_check_private" ><input checked="checked" type="checkbox">private</div>
+					<div id="chat_close">x</div>
+				</div>
+				<div id="chat" >
+				</div>
+			</div>
+			<form id="chat_form">
+			<input type="text" id="chat_new_message" />
+			<input type="submit" value="Send" id="chat_send_message" />
+			</form>
+		</div>
+		<div id="canvas_loading">Loading ...</div>
+		<div id="arrow_directions">
+			<div id="direction_nw"></div>
+			<div id="direction_ne"></div>
+			<div id="direction_sw"></div>
+			<div id="direction_se"></div>
+		</div>
+		<canvas id="canvas" width="800" height="600">
+		</canvas>
+	</div>
+</div>
+<div id="tutorial_text" style="display:none">
+<p>
+You just appeared in the game.<br />
+To start, you just got a territory of 9 tiles.<br />
+To move around, use the keyboard arrows.<br/>
+<br/>
+At the top, you can see your general informations.<br/>
+<br/>
+At the right, this is the interaction panel, click on the elements to see informations or do actions.<br/>
+<ul>
+<li>Crop market tells you the sell price per crop.</li>
+<li>Natural events reminds you of events taking place in the world.</li>
+<li>Weapons shows you the weapon you have right now and the ones you can buy.</li>
+<li>Players opens a list of players, where you can see if they are connected and where they are.</li>
+</ul>
+The right panel also shows you the tile status and crop status where you are.<br />
+Under this you have the list of actions you can do.<br /><br />
+Let's start<br />
+Click on "Set a crop" and choose a crop for your tile.<br />
+The crop grows!<br />
+Look at the value in the tile status, you will see humidity and fertility decreasing.<br />
+If they get to 0%, the crop will no more grow and its health will fall.<br />
+To avoid that, you can water and fertilize the tile.<br />
+When the crop is ready, harvest it before it's too late!<br />
+</p>
+</div>
+<script type="text/javascript">
+
+/* variables globales */
+
+var playerData = JSON.parse('{{{player}}}');
+var playerLevel = {{{level}}};
+var playerExperienceToUp = {{{experienceToUp}}};
+var playerTerritorySize = {{{territorySize}}};
+
+var currentCenterX = playerData.x;
+var currentCenterY = playerData.y;
+var currentUserX = playerData.x;
+var currentUserY = playerData.y;
+
+var canvas = new fabric.Canvas('canvas');
+canvas.renderOnAddition = false;
+canvas.selection = false;
+ 
+var baseSquares = JSON.parse('{{{squares}}}');
+
+var cropList = JSON.parse('{{{cropListStr}}}');
+
+
+/* fin variables globales */
+
+canvas.on('mouse:up'/*'object:selected'*/, function(e) {
+    
+    /*var x = e.e.clientX;
+    var y = e.e.clientY;
+    
+    var dx = ( ( ( y - 300 ) / squareHeight ) - ( ( x - 300 ) / squareWidth ) )/2;
+    
+    var dy = ( ( x - 300 ) / squareWidth ) + dx;
+    
+    dix = dx%0.5;
+    diy = dy%0.5;
+        
+    var X = currentCenterX + (dx-dix)*2;
+    var Y = currentCenterY + (dy-diy)*2;
+        
+    var o = tabSquares[X][Y];*/
+    /*var o = e.target;
+    if (o.type == "square") {
+        o.select();
+    }*/
+});
+
+$(document).ready(function () {
+    //Avant loading
+    loading (function () {
+        
+        fog = new Fog();
+        canvas.add(fog); 
+        
+        for ( var id  in baseSquares ) {
+            var square = baseSquares[id];
+            var s = new Square(square);
+            if (tabSquares[square.x] == undefined) {
+                tabSquares[square.x] = {};
+            }
+            tabSquares[square.x][square.y] = s;
+            canvas.add(s);
+            canvas.sendToBack(s);
+        }
+        //Chargement terminé
+        $("#canvas_loading").hide('fade');        
+        
+        init();
+    }); 
+})
+
+</script>
+<script type="text/javascript" src="/scripts/ui.js"></script>
+
+<script type="text/javascript">
+$(function() {
+    $( document ).tooltip({
+    track: true
+    });
+ });
+</script>

@@ -1,0 +1,28 @@
+<div>
+	<div id="twitter_wrapper">
+		<a class="twitter-timeline" href="https://twitter.com/GreenHandGames" data-widget-id="346357062722277376">Tweets de @GreenHandGames</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+	<ul>
+	{{#messages}}
+  		<li>{{message}}</li>
+	{{/messages}}
+	</ul>
+	<form action="" method="POST">
+		<div>
+			<label for="name">Your username</label><br />
+			<input type="text" name="name" placeholder="Your username" />
+		</div>
+		<div>
+			<label for="password">Your password</label><br />
+			<input type="password" name="password"  placeholder="Your password" />
+		</div>
+        <div><input type="checkbox" name="cookie" />Remember me</div>
+        <input type="submit" value="Play!"/>
+    </form>
+    <div>
+    	You don't have an account yet ?<br /><br />
+    	<a style="color:rgb(255, 3, 3); border: 1px solid rgb(255, 3, 3);padding: 3px;" id="register_link" href="/user/register">REGISTER!</a>
+    </div>
+    <div style="clear: both"></div>
+</div>

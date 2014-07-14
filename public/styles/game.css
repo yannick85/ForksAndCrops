@@ -1,0 +1,524 @@
+/* GAME ZONE */
+#game_zone {
+    background: url("../img/tile/grass.png");
+}
+
+#canvas_wrapper {
+	position: relative;
+	width:800px;
+}
+
+#canvas_loading {
+	background: url("../img/loader.gif") center center no-repeat rgba(180, 180, 180, 0.9);
+	top: 0px;
+	left: 0px;
+	width: 800px;
+	height: 600px;
+	position: absolute;
+	z-index: 99999;
+	text-align: center;
+	line-height: 400px;
+}
+
+#message_info_box {
+	padding: 5px;
+	background: rgba(112, 160, 221, 1);
+	border: 2px solid rgba(0,0,0,0.6);
+	border-radius: 5px;
+	width: 600px;
+	left: 100px;
+	top: 15px;
+	position: absolute;
+	z-index: 99;
+}
+
+#message_info_box .message {
+	
+}
+#message_info_box .message .chatinfo {
+	color : rgba(0, 78, 0, 1);
+	font-style: italic;
+}
+#message_info_box .message .important {
+	color : red;
+	font-weight: bold;
+}
+
+#canvas_wrapper .canvas-container {
+	z-index: 9;
+}
+#canvas {
+	border: 1px solid #000000;
+	border-radius: 5px;
+	background-color: rgba(126, 209, 255, 0.3);
+	z-index: 9;
+}
+
+#arrow_directions {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 100;
+}
+#arrow_directions > div {
+	position: absolute;
+	width: 105;
+	height: 105;
+	margin: 5px;
+	cursor: pointer
+}
+#direction_nw {
+	left: 0px;
+	top: 0px;
+	background: url('../img/arrow/nw.png');
+}
+#direction_ne {
+	left: 685px;
+	top: 0px;
+	background: url('../img/arrow/ne.png');
+}
+#direction_sw {
+	left: 0px;
+	top: 485px;
+	background: url('../img/arrow/sw.png');
+}
+#direction_se {
+	left: 685px;
+	top: 485px;
+	background: url('../img/arrow/se.png');
+}
+/* END GAME ZONE*/
+
+/* TOP ZONE */
+#top_zone {
+	height: 40px;
+	background: rgba(255,255,255,0.5);
+	color: #555;
+	margin: 10px;
+}
+
+#user_info {
+	
+}
+
+#user_name {
+	display: inline-block;
+	padding-right: 10px;
+	padding-left: 30px;
+	width: 150px;
+	font-size: 20px;
+	font-weight: bold;
+	height: 40px;
+	line-height: 40px;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+    overflow: hidden;
+    background: url("../img/picto/player.png") 5px center no-repeat;
+}
+
+#user_level {
+	display: inline-block;
+	padding-right: 5px;
+	padding-left: 30px;
+	width: 30px;
+	font-size: 20px;
+	height: 40px;
+	line-height: 40px;
+	background: url("../img/picto/level.png") left center no-repeat;
+}
+
+#user_experience_to_up {
+	display: inline-block;
+	padding-right: 5px;
+	padding-left: 30px;
+	width: 50px;
+	font-size: 16px;
+	height: 40px;
+	line-height: 40px;
+	background: url("../img/picto/xp_to_up.png") left center no-repeat;
+}
+
+#user_territory_size {
+	display: inline-block;
+	padding-right: 5px;
+	padding-left: 30px;
+	width: 40px;
+	font-size: 16px;
+	height: 40px;
+	line-height: 40px;
+	background: url("../img/picto/nb_territory.png") left center no-repeat;
+}
+
+#user_health {
+	display: inline-block;
+	padding-right: 5px;
+	padding-left: 30px;
+	width: 40px;
+	font-size: 16px;
+	height: 40px;
+	line-height: 40px;
+	background: url("../img/picto/health.png") left center no-repeat;
+}
+
+#user_money {
+	display: inline-block;
+	padding-right: 5px;
+	padding-left: 30px;
+	width: 40px;
+	font-size: 16px;
+	height: 40px;
+	line-height: 40px;
+	background: url("../img/picto/gold.png") left center no-repeat;
+}
+
+
+#user_position {
+	display: inline-block;
+	padding-right: 5px;
+	padding-left: 30px;
+	width: 80px;
+	font-size: 16px;
+	height: 40px;
+	line-height: 40px;
+	background: url("../img/picto/coordinates.png") left center no-repeat;
+}
+#user_position > div {
+	display: inline-block;
+}
+
+#sound_control {
+	display: inline-block;
+	padding-right: 5px;
+	padding-left: 30px;
+	width: 42px;
+	font-size: 16px;
+	height: 40px;
+	line-height: 40px;
+	cursor : pointer;
+}
+#sound_control.active {
+	background: url("../img/picto/sound_on.png") left center no-repeat;
+}
+#sound_control.inactive {
+	text-decoration: line-through;
+	background: url("../img/picto/sound_off.png") left center no-repeat;
+}
+
+#help_button {
+	display: inline-block;
+	padding-right: 5px;
+	padding-left: 30px;
+	width: 40px;
+	font-size: 16px;
+	height: 40px;
+	line-height: 40px;
+	cursor : pointer;
+}
+
+/* END TOP ZONE */
+
+/* RIGHT ZONE */
+#info_zone {
+	float: right;
+	padding: 10px;
+	background: rgba(255,255,255,0.5);
+	height: 580px;
+	width: 180px;
+}
+
+#square_info {
+	
+}
+#square_info_base {
+	padding: 5px;
+	padding-top: 30px;
+	margin: 2px;
+	background: url("../img/picto/squareinfo/tile.png") 5px 5px no-repeat rgba(200, 200, 200, 0.8);
+	border: 1px solid rgba(50,50,50,0.6);
+}
+#square_crop {
+	padding: 5px;
+	padding-top: 30px;
+	margin: 2px;
+	background: url("../img/picto/squareinfo/crop.png") 5px 5px no-repeat rgba(200, 200, 200, 0.8);
+	border: 1px solid rgba(50,50,50,0.6);
+}
+
+#square_fertility_wrapper,#square_humidity_wrapper,#square_owner_wrapper,#square_crop_maturity_wrapper,#square_crop_health_wrapper,#square_crop_name_wrapper {
+	margin-top: 5px;
+	margin-left: 10px;
+}
+#square_humidity {
+	padding-left: 25px;
+	background: url("../img/picto/squareinfo/humidity.png") 3px center no-repeat;
+}
+#square_fertility {
+	padding-left: 25px;
+	background: url("../img/picto/squareinfo/fertility.png") left center no-repeat;
+}
+#square_owner {
+	padding-left: 25px;
+	background: url("../img/picto/squareinfo/owner.png") left center no-repeat;
+}
+#square_crop_health {
+	padding-left: 25px;
+	background: url("../img/picto/squareinfo/health.png") left center no-repeat;
+}
+#square_crop_maturity {
+	padding-left: 25px;
+	background: url("../img/picto/squareinfo/maturity.png") left center no-repeat;
+}
+
+#crop_list {
+	border: 1px solid rgba(255,0,0,0.6);
+	border-top: 0px;
+	margin-top:-8px;
+	background: rgba(50, 200, 75,1);
+	margin: 2px;
+}
+#crop_list a {
+	display: block;
+	padding: 5px;
+	height:20px;
+	line-height: 20px;
+}
+
+.button {
+	padding: 5px;
+	padding-left: 40px;
+	background: rgba(19, 148, 132,1) 5px center no-repeat;
+	border: 1px solid rgba(255,0,0,0.6);
+	margin: 2px;
+	cursor : pointer;
+}
+#buy_square {
+	background-image: url("../img/picto/button/buy_tile.png")
+}
+#attack_square {
+	background-image: url("../img/picto/button/attack_tile.png")
+}
+#set_crop {
+	background-image: url("../img/picto/button/set_crop.png")
+}
+#sell_crop {
+	background-image: url("../img/picto/button/sell_crop.png")
+}
+#remove_crop {
+	background-image: url("../img/picto/button/remove_crop.png")
+}
+#water_crop {
+	background-image: url("../img/picto/button/water_crop.png")
+}
+#fertilize_crop {
+	background-image: url("../img/picto/button/fertilize_crop.png")
+}
+
+.ks {
+	float : right;
+	padding : 2px;
+	border : 1px solid #FFF;
+	background : #CCC;
+	line-height: 14px;
+	font-size: 14px;
+	text-transform: capitalize;
+}
+
+/* CHAT */
+#chat_wrapper {
+	padding: 5px;
+	background: rgba(80, 9, 9, 1);
+	border: 2px solid rgba(228, 209, 209, 0.6);
+	border-radius: 5px;
+	width: 600px;
+	left: 100px;
+	bottom: -20px;
+	position: absolute;
+	z-index: 999;
+}
+
+#chat_wrapper #chat {
+	width: 100%;
+	height: 100px;
+	overflow-y: scroll;
+}
+
+#chat_wrapper #chat_new_message {
+	width: 450px;
+}
+
+#chat_wrapper #chat_send_message {
+	float : right;
+	width : 50px;
+}
+
+#chat_wrapper #chat .chat-message{
+	
+}
+#chat_wrapper #chat .chat-message .sender, #chat_wrapper #chat .chat-message .recipient {
+	color: red;
+	cursor: pointer;
+}
+
+#chat_form {
+	margin-bottom : 0px;
+}
+
+#chat_top {
+	height: 25px;
+}
+#chat_check_public, #chat_check_private, #chat_close {
+	display: inline-block;
+	cursor: pointer;
+}
+#chat_check_public, #chat_check_private {
+	padding: 0 10px;
+}
+#chat_check_public, #chat .public-message {
+	color: rgb(255, 255, 255);
+}
+#chat_check_private, #chat .private-message {
+	color: rgb(255, 0, 184);
+}
+#chat_close {
+	float: right;
+	padding: 3px;
+	width: 12px;
+	height: 12px;
+	line-height: 10px;
+	font-size: 15px;
+	text-align: center;
+	background : #FFF;
+	color: #000;
+	border: 2px solid #000;
+}
+/* END CHAT */
+
+/* PANEL */
+.panel {
+	position : relative;
+	z-index: 999;
+}
+.panel .panel-title {
+	padding : 5px;
+	background : rgba(255,255,255,0.8);
+	border: 1px solid #000;
+}
+.panel .panel-inside {
+	position: absolute;
+	padding : 5px;
+	background : rgba(255,255,255,0.8);
+	border: 1px solid #000;
+	right: 179px;
+	top: 0px;
+	width: 150px;
+}
+.panel .panel-content {
+	max-height: 400px;
+	overflow-y: auto;
+}
+.panel .panel-refresh {
+	height : 16px;
+	background-position: center right;
+	background-image : url("../img/little_loader_fixed.png");
+	background-repeat: no-repeat
+}
+.panel .panel-refresh.waiting {
+	background-image : url("../img/little_loader.gif");
+}
+
+#crop_market_wrapper .panel-title {
+	background-image: url("../img/picto/cropmarket.png");
+	background-repeat: no-repeat;
+	background-position: 150px center;
+}
+
+#natural_event_wrapper .panel-title {
+	background-image: url("../img/picto/event.png");
+	background-repeat: no-repeat;
+	background-position: 150px center;
+}
+
+#players_wrapper .panel-title {
+	background-image: url("../img/picto/players.png");
+	background-repeat: no-repeat;
+	background-position: 150px center;
+}
+
+#weapons_wrapper .panel-title {
+	background-image: url("../img/picto/weapon.png");
+	background-repeat: no-repeat;
+	background-position: 150px center;
+}
+
+.one-weapon.current {
+	color: #2A2;
+}
+.one-weapon.equipWeapon {
+	color: #22F;
+	cursor : pointer;
+}
+.one-weapon.buyWeapon {
+	color: #F22;
+	cursor : pointer;
+}
+
+.one-player{
+	padding-left: 25px;
+}
+.one-player.connected {
+	background: url("../img/picto/private_message.png") left center no-repeat;
+	color: #2A2;
+	cursor : pointer;
+}
+/* END PANEL */
+
+/* POPUP */
+#popup_wrapper {
+	position: absolute;
+	width: 580px;
+	height: 650px;
+	z-index: 109;
+	text-align: center;
+	left: 110px;
+}
+
+#popup_wrapper .popup{
+	display: inline-block;
+	margin : 80px;
+	width: 500px;
+	height: 350px;
+	background: rgba(220,220,220,0.9);
+	border : 2px solid rgba(100,100,100,0.5);
+	border-radius: 10px;
+}
+
+#popup_wrapper .popup .popup-title{
+	margin-top: 5px;
+	text-align: center;
+	font-size: 30px;
+	height: 40px;
+	font-weight: bold;
+}
+
+#popup_wrapper .popup .popup-message{
+	padding: 15px;
+	height: 220px;
+	overflow: auto;
+	text-align: justify;
+}
+
+#popup_wrapper .popup .popup-confirm{
+	font-size: 22px;
+	font-weight: bold;
+	margin: 15px auto;
+	width: 60px;
+	height: 30px;
+	line-height: 30px;
+	background: #3D3;
+	border: 1px solid #FFF;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+/* END POPUP */

@@ -1,0 +1,52 @@
+<head>
+	<meta charset="utf-8">
+	<title>
+		Forks & Crops {{title}}
+	</title>
+	<script src="/scripts/lib/jquery.js"></script>
+	<script src="/scripts/lib/jquery-ui.min.js"></script>
+	
+	<link rel="stylesheet" media="screen" type="text/css" title="style" href="/styles/main.css"></link>
+	<link rel="stylesheet" media="screen" type="text/css" title="style" href="/styles/jquery-ui/jquery-ui.min.css"></link>
+</head>
+<body>
+<header id="header">
+	<div id="header_inside">
+		{{#banner}}
+	        <div id="logo"><a href="/">Forks & Crops</a></div>
+	    {{/banner}}
+	    {{^banner}}
+	        <div id="logo"><a href="/">Forks & Crops</a></div>
+	    {{/banner}}		
+	    <div id="user_bar">
+	        <a href="/user/register">Register</a>
+	        <a href="/user/login">Login</a>
+	        <a href="/user/logout">Logout</a>
+	    </div>
+    </div>
+</header>
+<div id="content_wrapper">
+	<div id="content">
+		<h1>{{ title }}</h1>
+		<div id="content_inside">
+			{{{ content }}}
+		</div>
+	</div>
+</div>
+<footer id="footer">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7750997849569025";
+/* ForksAndCrops */
+google_ad_slot = "3528730962";
+google_ad_width = 970;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" 
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+<br />
+&copy;GreenHand Games - Please use Google Chrome for a good user experience
+</footer>
+</body>
